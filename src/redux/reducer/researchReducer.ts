@@ -1,12 +1,15 @@
+import { DataTypes } from '../sagas/sagas';
+
 export type Actions = {
   type: string;
+  payload: Array<DataTypes>;
 };
 
 const INITIAL_STATE = {
-  data: {},
+  data: [],
 };
 
-const researchReducer = (state = INITIAL_STATE, action: any) => {
+const researchReducer = (state = INITIAL_STATE, action: Actions) => {
   switch (action.type) {
     case 'GET_DATA_SUCCESS':
       return {
